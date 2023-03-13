@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body{
+    background: rgb(251,255,177);
+    background: radial-gradient(farthest-corner at 40px 40px, rgba(251,255,177,1) 0%, rgba(255,191,169,1) 75%, rgba(255,172,172,1) 100%) fixed;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1{
+    color:#b4a67e;
+    animation: float 3.5s infinite ease-in-out;
+    position: relative;
+    text-align: center;
+    
+    text-shadow: -1px -1px 0px $clr-blue,
+    3px 3px 0px $clr-blue,
+    6px 6px 0px $clr-blue-900;
+}
