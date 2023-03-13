@@ -12,7 +12,7 @@ window.addEventListener("mousemove",(e)=>{
     const y=e.clientY;
 
     body.style=`background: rgb(251,255,177);
-    background: radial-gradient(farthest-corner at ${x}px ${y}px, rgba(251,255,177,1) 0%, rgba(255,191,169,1) 75%, rgba(255,172,172,1) 100%) fixed;
+    background: radial-gradient(circle at ${x}px ${y}px, rgba(251,255,177,1) 0%, rgba(255,191,169,1) 75%, rgba(255,172,172,1) 100%) fixed;
     font-family: 'Josefin Sans', sans-serif;`
 })
 
