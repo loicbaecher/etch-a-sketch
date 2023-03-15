@@ -12,7 +12,36 @@ h1{
     position: relative;
     text-align: center;
     
-    text-shadow: -1px -1px 0px $clr-blue,
-    3px 3px 0px $clr-blue,
-    6px 6px 0px $clr-blue-900;
+    text-shadow: -1px -1px 0px rgba(255,191,169,1),3px 3px 0px rgba(255,191,169,1),6px 6px 0px rgba(255,191,169,1);
+}
+
+.rules{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+
+.rules>div{
+    background-color: rgba(255,172,172,1);
+    padding: 3px 5px;
+    border-style: solid;
+    border-color: rgb(129, 127, 127);
+    border-radius: 5px;
+    border-width: 2px;
+}
+
+button{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: rgba(255,172,172,1);
+    transition-duration: 0.2s;
+    padding:7px 6px;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: rgba(255,172,172,1);
+}
+
+button:hover{
+    background-color: white;
+    color: black;
 }
