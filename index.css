@@ -8,11 +8,22 @@ body{
 
 h1{
     color:#b4a67e;
-    animation: float 3.5s infinite ease-in-out;
     position: relative;
     text-align: center;
-    
     text-shadow: -1px -1px 0px rgba(255,191,169,1),3px 3px 0px rgba(255,191,169,1),6px 6px 0px rgba(255,191,169,1);
+
+    /* steps of the animations */
+    animation-name:floating;
+    animation-duration:3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* steps of the animations */
+@keyframes floating{
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 7px); }
+    100%   { transform: translate(0, -0px); }   
 }
 
 .rules{
@@ -54,3 +65,70 @@ button:hover{
     background-color: white;
     color: black;
 }
+
+div.rainb{
+    border-color: transparent;
+    background-color: transparent;
+}
+
+/* add a slider */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .sround {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .sround:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .sround {
+    background-color: rgba(255,172,172,1);
+  }
+  
+  input:focus + .sround {
+    box-shadow: 0 0 1px rgba(255,172,172,1);
+  }
+  
+  input:checked + .sround:before {
+    -webkit-transform: translateX(11px);
+    -ms-transform: translateX(11px);
+    transform: translateX(11px);
+  }
+  
+  /* Rounded sliders */
+  .sround {
+    border-radius: 34px;
+  }
+  
+  .sround:before {
+    border-radius: 50%;
+  }

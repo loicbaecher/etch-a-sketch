@@ -1,6 +1,9 @@
 const mousepo=document.querySelector(".getdegrees")
 const body=document.querySelector("body")
 
+const color=document.querySelector(".switch>input")
+
+//background effect
 window.addEventListener("mousemove",(e)=>{
     
     //get half of the width and height
@@ -17,9 +20,8 @@ window.addEventListener("mousemove",(e)=>{
     font-family: 'Josefin Sans', sans-serif;`
 })
 
-//when clicking on the button, create grid
+//when clicking on the button, create grid.
 gridbut=body.querySelector("button.rules#create");
-
 gridbut.addEventListener('click',function(e){
     cont=body.querySelector("div.flexcontai")
     cont.style.border="solid black";
@@ -46,17 +48,22 @@ gridbut.addEventListener('click',function(e){
     i++
     }
 
-
-    //in order to observe the squares
+    //when moving through the cells change color...
     allcases=document.querySelectorAll(".case")
     allcases2=Array.from(allcases)
     allcases2.forEach(x => {
         x.addEventListener('mouseover',function(e){
-            e.target.style.backgroundColor="black";
-        })
-    });
-    
-
+            //...to random color if checked
+            if(color.checked){
+                function randomColor(){
+                    e.target.style.backgroundColor=`#${parseInt(Math.random() * 0xffffff).toString(16)}`
+                }
+                randomColor()
+            }
+            //to black if not checked
+            else(e.target.style.backgroundColor="black");
+        });
+    })
 })
 
 erabut=body.querySelector("button#erase")
