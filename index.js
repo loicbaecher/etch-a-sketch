@@ -23,6 +23,8 @@ gridbut=body.querySelector("button.rules");
 gridbut.addEventListener('click',function(e){
     val=body.querySelector('div.gridval',);
     nb=parseInt(val.textContent);
+    nb=Math.pow(Math.round(Math.sqrt(parseInt(val.textContent))),2)
+    val.textContent=nb;
 
     bigcont=document.querySelector(".bigcontainer");
 
@@ -31,11 +33,10 @@ gridbut.addEventListener('click',function(e){
     }
 
     bigcont.style.display="grid";
-    bigcont.style.gridTemplateColumns="1fr 1fr 1fr";
-    bigcont.style.gridTemplateRows="1fr 1fr 1fr";
-
-    var i=0
-    while(i<nb){
+    bigcont.style.gridTemplateColumns=`repeat(${Math.sqrt(nb)},1fr)`;
+    bigcont.style.gridAutoRows=`${500/(Math.sqrt(nb))}px`;
+    var i=1
+    while(i<nb+1){
     var etch=document.createElement("div",);
     etch.classList.add("case");
     etch.setAttribute("id",`case${i}`);
@@ -43,6 +44,8 @@ gridbut.addEventListener('click',function(e){
     i++
     }
 
+
+    //in order to observe the squares
     allcases=document.querySelectorAll(".case")
     allcases2=Array.from(allcases)
     allcases2.forEach(x => {

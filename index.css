@@ -29,6 +29,17 @@ h1{
     border-color: rgb(129, 127, 127);
     border-radius: 5px;
     border-width: 2px;
+    margin:12px 0px;
+}
+
+div.flexcontai{
+    margin:auto;
+    align-content: center;
+    text-align: center;
+    width:500px;
+    height:500px;
+    border-color: black;
+    border-style: solid;
 }
 
 button{
