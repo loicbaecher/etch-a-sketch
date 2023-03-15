@@ -18,13 +18,13 @@ window.addEventListener("mousemove",(e)=>{
 })
 
 //when clicking on the button, create grid
-gridbut=body.querySelector("button.rules");
+gridbut=body.querySelector("button.rules#create");
 
 gridbut.addEventListener('click',function(e){
     cont=body.querySelector("div.flexcontai")
     cont.style.border="solid black";
     val=body.querySelector('div.gridval',);
-    nb=Math.min(1000,parseInt(val.textContent));
+    nb=Math.min(1024,parseInt(val.textContent));
     nb=Math.pow(Math.round(Math.sqrt(parseInt(nb))),2)
     val.textContent=nb;
 
@@ -59,3 +59,12 @@ gridbut.addEventListener('click',function(e){
 
 })
 
+erabut=body.querySelector("button#erase")
+
+erabut.addEventListener('click',function(e){
+    allcases=document.querySelectorAll(".case")
+    allcases2=Array.from(allcases)
+    allcases2.forEach(x => {
+        x.style.backgroundColor="transparent";
+    })
+})
