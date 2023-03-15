@@ -17,12 +17,37 @@ window.addEventListener("mousemove",(e)=>{
     font-family: 'Josefin Sans', sans-serif;`
 })
 
-const etch=document.createElement("div",);
-etch.classList.add("case");
-bigcont=document.querySelector(".bigcontainer");
-bigcont.appendChild(etch);
+//when clicking on the button, create grid
+gridbut=body.querySelector("button.rules");
 
-//gridbut=document.querySelector("button.rules")
-//gridbut.addEventListener('click',function(e){
+gridbut.addEventListener('click',function(e){
+    val=body.querySelector('div.gridval',);
+    nb=parseInt(val.textContent);
+
+    bigcont=document.querySelector(".bigcontainer");
+
+    while(bigcont.firstChild){
+        bigcont.removeChild(bigcont.firstChild);
+    }
+
+    bigcont.style.display="grid";
+    bigcont.style.gridTemplateColumns="1fr 1fr 1fr";
+    bigcont.style.gridTemplateRows="1fr 1fr 1fr";
+
+    var i=0
+    while(i<nb){
+    var etch=document.createElement("div",);
+    etch.classList.add("case");
+    etch.setAttribute("id",`case${i}`);
+    bigcont.appendChild(etch);
+    i++
+    }
+
+    allcases=document.querySelectorAll(".case")
+    allcases2=Array.from(allcases)
+    allcases2.forEach(x => {
+        x.style.border="solid black";
+    });
     
-//})
+})
+
