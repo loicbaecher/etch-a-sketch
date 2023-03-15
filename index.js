@@ -24,8 +24,8 @@ gridbut.addEventListener('click',function(e){
     cont=body.querySelector("div.flexcontai")
     cont.style.border="solid black";
     val=body.querySelector('div.gridval',);
-    nb=parseInt(val.textContent);
-    nb=Math.pow(Math.round(Math.sqrt(parseInt(val.textContent))),2)
+    nb=Math.min(1000,parseInt(val.textContent));
+    nb=Math.pow(Math.round(Math.sqrt(parseInt(nb))),2)
     val.textContent=nb;
 
     bigcont=document.querySelector(".bigcontainer");
