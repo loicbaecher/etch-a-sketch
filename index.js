@@ -21,6 +21,8 @@ window.addEventListener("mousemove",(e)=>{
 gridbut=body.querySelector("button.rules");
 
 gridbut.addEventListener('click',function(e){
+    cont=body.querySelector("div.flexcontai")
+    cont.style.border="solid black";
     val=body.querySelector('div.gridval',);
     nb=parseInt(val.textContent);
     nb=Math.pow(Math.round(Math.sqrt(parseInt(val.textContent))),2)
@@ -49,8 +51,11 @@ gridbut.addEventListener('click',function(e){
     allcases=document.querySelectorAll(".case")
     allcases2=Array.from(allcases)
     allcases2.forEach(x => {
-        x.style.border="solid black";
+        x.addEventListener('mouseover',function(e){
+            e.target.style.backgroundColor="black";
+        })
     });
     
+
 })
 
